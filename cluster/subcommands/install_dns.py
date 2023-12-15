@@ -1,9 +1,9 @@
 
 import click
-from kubernetes import client, config
 
 from cluster.types import MainCmdCtx
 from cluster.k8s_connection import Connection
+
 
 @click.command(help="Install external DNS service")
 @click.pass_context

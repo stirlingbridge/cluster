@@ -1,9 +1,9 @@
 
 
-import os
 from pathlib import Path
 
 from cluster.types import Config
+
 
 class _c:
     config: Config = None

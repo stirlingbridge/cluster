@@ -2,7 +2,6 @@
 import base64
 import click
 import json
-from kubernetes import client, config
 
 from cluster.types import MainCmdCtx
 from cluster.k8s_connection import Connection
@@ -51,7 +50,7 @@ def command(context):
             case "ingress-nginx-controller":
                 ingress_present = True
             case "cert-manager":
-                tls_present = True        
+                tls_present = True
             case "external-dns":
                 dns_present = True
 
