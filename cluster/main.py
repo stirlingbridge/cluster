@@ -13,10 +13,12 @@ CLICK_CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 @click.option("--quiet", is_flag=True, default=False, help="Suppress all non-essential output")
 @click.option("--verbose", is_flag=True, default=False, help="Enable verbose output")
 @click.option("--dry-run", is_flag=True, default=False, help="Run but do not do anything")
+@click.option("--kube-config-file", help="Use this kube config file")
 @click.pass_context
-def main(context, debug, quiet, verbose, dry_run):
+def main(context, debug, quiet, verbose, dry_run, kube_config_file):
     options = CliOptions(debug, quiet, verbose, dry_run)
     d.opt = options
+    config.set(kube_config_file)
     main_context = MainCmdCtx(config.get())
     context.obj = main_context
 

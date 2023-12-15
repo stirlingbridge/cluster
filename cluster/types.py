@@ -1,3 +1,5 @@
+
+from pathlib import Path
 from dataclasses import dataclass
 
 
@@ -11,7 +13,7 @@ class CliOptions:
 
 @dataclass
 class Config:
-    kube_config_file: str
+    kube_config_path: Path
 
 
 @dataclass
