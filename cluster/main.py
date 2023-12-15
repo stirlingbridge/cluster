@@ -3,7 +3,7 @@ import click
 from cluster import config
 from cluster.di import d
 from cluster.types import CliOptions, MainCmdCtx
-from cluster.subcommands import status
+from cluster.subcommands import status, install_dns
 
 CLICK_CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
 
@@ -30,3 +30,4 @@ def version(context):
 
 
 main.add_command(status.command, "status")
+main.add_command(install_dns.command, "install-dns")
